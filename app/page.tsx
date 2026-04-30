@@ -47,7 +47,7 @@ function GameBoard() {
                 </svg>
               </button>
               <button onClick={() => setStatsOpen(true)} className="hidden sm:block font-bold tracking-widest text-sm uppercase hover:text-[var(--theme)] transition-colors">
-                {t("numeral")}
+                {t("numeral", "common")}
               </button>
               <div className="flex gap-2">
                 <button onClick={() => setSettingsOpen(true)} className="text-[var(--foreground)]/60 hover:text-[var(--theme)] transition-colors">
@@ -96,7 +96,7 @@ function GameBoard() {
             </div>
               {gameOver && !statsOpen && !winOpen && (
                 <div className={`text-sm font-semibold px-5 py-2 rounded-full fade-up ${won ? "bg-[var(--theme)] text-white" : "bg-[var(--island)] border border-white/10 text-[var(--foreground)]/70"}`}>
-                  {won ? `${t("nice")} 🎉` : `${t("theNumberWas")} ${target}`}
+                  {won ? `${t("nice", "game")} 🎉` : `${t("theNumberWas", "game")} ${target}`}
                 </div>
               )}
           </main>

@@ -10,7 +10,7 @@
     "language": "Language"
   },
   "game": {
-    "guessSecret": "Guess the secret 5-digit code in 6 tries. After each guess, tile colours tell you how close each digit is to the target — but not the exact distance or direction.",
+    "guessSecret": "Guess the secret 5-digit code in 6 tries. After each guess, tile colours tell you how close each digit is to the target, but not the exact distance or direction.",
     "notEnoughDigits": "Not enough digits",
     "theNumberWas": "The number was",
     "nextGameIn": "Next game in",

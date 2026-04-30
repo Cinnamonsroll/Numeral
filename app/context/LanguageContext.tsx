@@ -16,7 +16,7 @@ export function useLang() {
   return ctx;
 }
 
-async function loadTranslations(lang: string): Promise<Translations> {
+async function loadTranslationsFile(lang: string): Promise<Translations> {
   try {
     const mod = await import(`../i18n/${lang}.json`);
     return mod.default ?? mod;
@@ -27,13 +27,13 @@ async function loadTranslations(lang: string): Promise<Translations> {
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState("en");
+  const [lang, setLangState] = useState("en");
   const [translations, setTranslations] = useState<Translations>({});
 
   const load = useCallback(async (l: string) => {
-    const t = await loadTranslations(l);
+    const t = await loadTranslationsFile(l);
     setTranslations(t);
-    setLang(l);
+    setLangState(l);
     localStorage.setItem("numeral-lang", l);
   }, []);
 
@@ -50,41 +50,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       return translations[key] ?? key;
     };
   }, [translations]);
-
-  return (
-    <LanguageContext.Provider value={{ lang, setLang: load, t }}>
-      {children}
-    </LanguageContext.Provider>
-  );
-}
-
-async function loadTranslations(lang: string): Promise<Translations> {
-  try {
-    const mod = await import(`../i18n/${lang}.json`);
-    return mod.default ?? mod;
-  } catch {
-    const mod = await import(`../i18n/en.json`);
-    return mod.default ?? mod;
-  }
-}
-
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState("en");
-  const [translations, setTranslations] = useState<Translations>({});
-
-  const load = useCallback(async (l: string) => {
-    const t = await loadTranslations(l);
-    setTranslations(t);
-    setLang(l);
-    localStorage.setItem("numeral-lang", l);
-  }, []);
-
-  useEffect(() => {
-    const saved = localStorage.getItem("numeral-lang") ?? "en";
-    load(saved);
-  }, [load]);
-
-  const t = (key: string) => translations[key] ?? key;
 
   return (
     <LanguageContext.Provider value={{ lang, setLang: load, t }}>

@@ -66,7 +66,7 @@ export function WinModal({
   }, [guesses, evaluations, guessCount, hardMode]);
 
   const { t } = useLang();
-  const winMessage = WIN_MESSAGES[guessCount] ?? t("nice");
+  const winMessage = WIN_MESSAGES[guessCount] ?? t("nice", "game");
 
   return (
     <>
@@ -83,7 +83,7 @@ export function WinModal({
           </button>
         </div>
           <p className="text-sm text-[var(--foreground)]/60 text-center">
-            {t("theNumberWas")}{" "}
+            {t("theNumberWas", "game")}{" "}
             <span className="font-bold text-[var(--theme)]">{target}</span>
           </p>
         <div className="flex flex-col gap-1.5">
@@ -101,13 +101,13 @@ export function WinModal({
           ))}
         </div>
           <div className="text-center text-xs text-[var(--foreground)]/40 font-mono">
-            {t("nextGameIn")} {countdown}
+            {t("nextGameIn", "game")} {countdown}
           </div>
           <button
             onClick={handleCopy}
             className="w-full py-2.5 bg-[var(--theme)] text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity"
           >
-            {t("shareResults")}
+            {t("shareResults", "game")}
           </button>
       </div>
     </dialog>

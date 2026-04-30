@@ -1,4 +1,4 @@
-# Numeral
+[# Numeral](https://numeral.pancake.wtf)
 
 A daily number guessing game built with Next.js. Guess the secret 5-digit code in 6 tries.
 
@@ -6,7 +6,7 @@ A daily number guessing game built with Next.js. Guess the secret 5-digit code i
 
 - Enter a 5-digit guess using the on-screen keyboard
 - After each guess, colored tiles show how close each digit is to the target
-- Green: exact match, Orange: off by 1-2, Dark Orange: off by 3-4, Red: off by 5+, Purple: joker (hidden distance)
+- Green: exact match, Orange: off by 1-2, Dark Orange: off by 3-4, Red: off by 5+, Purple: Hidden
 - Hard mode: correct digits must stay in place
 
 ## Tech Stack

@@ -10,7 +10,7 @@
     "language": "Langue"
   },
   "game": {
-    "guessSecret": "Devinez le code secret à 5 chiffres en 6 essais. Après chaque essai, les couleurs vous indiquent à quel point chaque chiffre est proche de la cible — mais pas la distance exacte ni la direction.",
+    "guessSecret": "Devinez le code secret à 5 chiffres en 6 essais. Après chaque essai, les couleurs vous indiquent à quel point chaque chiffre est proche de la cible, mais pas la distance exacte ni la direction.",
     "notEnoughDigits": "Pas assez de chiffres",
     "theNumberWas": "Le numéro était",
     "nextGameIn": "Prochaine partie dans",
