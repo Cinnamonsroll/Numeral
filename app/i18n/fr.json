@@ -21,7 +21,8 @@
     "offBy1or2": "À 1 ou 2 près",
     "offBy3or4": "À 3 ou 4 près",
     "offBy5plus": "À 5 ou plus",
-    "jokerHidden": "Caché"
+    "jokerHidden": "Caché",
+    "nice": "Bien joué!"
   },
   "winMessages": {
     "1": "Génie!",

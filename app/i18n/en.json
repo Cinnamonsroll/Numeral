@@ -21,7 +21,8 @@
     "offBy1or2": "Off by 1 or 2",
     "offBy3or4": "Off by 3 or 4",
     "offBy5plus": "Off by 5+",
-    "jokerHidden": "Hidden"
+    "jokerHidden": "Hidden",
+    "nice": "Nice!"
   },
   "winMessages": {
     "1": "Genius!",

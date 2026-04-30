@@ -57,11 +57,11 @@ export function StatsDialog({
       <dialog ref={ref} onClose={onClose} onClick={(e) => { if (e.target === ref.current) onClose(); }} className={`numeral-dialog ${open ? "open" : ""}`}>
         <div className="bg-[var(--island)] rounded-2xl border border-white/8 p-6 flex flex-col gap-6 items-center">
         <div className="w-full flex justify-between items-center">
-          <h2 className="text-base font-bold tracking-widest uppercase">{t("statistics", "common")}</h2>
+          <h2 className="text-base font-bold tracking-widest uppercase">{t("common.statistics")}</h2>
           <button onClick={onClose} className="text-[var(--foreground)]/40 hover:text-[var(--foreground)] transition-colors text-lg leading-none">✕</button>
         </div>
           {won && winMessage && (
-            <p className="text-lg font-bold tracking-widest uppercase">{t(winMessage.toLowerCase(), "winMessages")}</p>
+            <p className="text-lg font-bold tracking-widest uppercase">            {winMessage.toLowerCase()}</p>
           )}
         <div className="grid grid-cols-4 gap-2 w-full">
               {[
@@ -72,12 +72,12 @@ export function StatsDialog({
               ].map(({ value, key }) => (
                 <div key={key} className="flex flex-col items-center gap-1 bg-[var(--background)] rounded-xl p-3">
                   <span className="text-2xl font-bold text-[var(--theme)]">{value}</span>
-                  <span className="text-xs text-[var(--foreground)]/40 text-center leading-tight">{t(key, "stats")}</span>
+                  <span className="text-xs text-[var(--foreground)]/40 text-center leading-tight">{t(`stats.${key}`)}</span>
                 </div>
               ))}
         </div>
         <div className="flex flex-col gap-2 w-full">
-            <p className="text-xs font-semibold tracking-widest uppercase text-[var(--foreground)]/40">{t("guessDistribution", "stats")}</p>
+            <p className="text-xs font-semibold tracking-widest uppercase text-[var(--foreground)]/40">            {t("stats.guessDistribution")}</p>
           {stats.dist.map((count, i) => (
             <div key={i} className="flex items-center gap-2 text-sm">
               <span className="w-3 text-[var(--foreground)]/40 text-right text-xs">{i + 1}</span>
@@ -97,7 +97,7 @@ export function StatsDialog({
             onClick={handleCopy}
             className="w-full py-2.5 bg-[var(--theme)] text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity"
           >
-            {t("shareResults", "game")}
+            {t("game.shareResults")}
           </button>
         )}
       </div>

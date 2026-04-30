@@ -30,11 +30,11 @@ function GameBoard() {
       <div className="w-full h-screen bg-[var(--background)] text-[var(--foreground)] flex justify-center overflow-hidden">
         <div className="fixed top-4 left-4 z-50">
           <a href="https://pancake.wtf" target="_blank" rel="noopener noreferrer" className="text-xs text-[var(--foreground)]/30 hover:text-[var(--theme)] transition-colors flex items-center gap-1">
-            {t("madeWith")}{" "}
+            {t("footer.madeWith")}{" "}
             <Image src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f95e.svg" alt="" width={14} height={14} className="inline-block w-3.5 h-3.5" />{" "}
             {t("and")}{" "}
             <Image src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2764.svg" alt="" width={14} height={14} className="inline-block w-3.5 h-3.5" />{" "}
-            {t("byPancake")}
+            {t("footer.byPancake")}
           </a>
         </div>
 
@@ -47,7 +47,7 @@ function GameBoard() {
                 </svg>
               </button>
               <button onClick={() => setStatsOpen(true)} className="hidden sm:block font-bold tracking-widest text-sm uppercase hover:text-[var(--theme)] transition-colors">
-                {t("numeral", "common")}
+                {t("common.numeral")}
               </button>
               <div className="flex gap-2">
                 <button onClick={() => setSettingsOpen(true)} className="text-[var(--foreground)]/60 hover:text-[var(--theme)] transition-colors">
@@ -96,7 +96,7 @@ function GameBoard() {
             </div>
               {gameOver && !statsOpen && !winOpen && (
                 <div className={`text-sm font-semibold px-5 py-2 rounded-full fade-up ${won ? "bg-[var(--theme)] text-white" : "bg-[var(--island)] border border-white/10 text-[var(--foreground)]/70"}`}>
-                  {won ? `${t("nice", "game")} 🎉` : `${t("theNumberWas", "game")} ${target}`}
+                  {won ? `${t("game.nice")} 🎉` : `${t("game.theNumberWas")} ${target}`}
                 </div>
               )}
           </main>

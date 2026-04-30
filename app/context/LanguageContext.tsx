@@ -7,7 +7,7 @@ type Translations = Record<string, any>;
 const LanguageContext = createContext<{
   lang: string;
   setLang: (l: string) => void;
-  t: (key: string, section?: string) => string;
+  t: (key: string) => string;
 } | null>(null);
 
 export function useLang() {
@@ -43,11 +43,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, [load]);
 
   const t = useMemo(() => {
-    return (key: string, section?: string) => {
-      if (section) {
-        return translations[section]?.[key] ?? key;
+    return (key: string) => {
+      const keys = key.split(".");
+      let result: any = translations;
+      for (const k of keys) {
+        result = result?.[k];
+        if (result === undefined) return key;
       }
-      return translations[key] ?? key;
+      return typeof result === "string" ? result : key;
     };
   }, [translations]);
 

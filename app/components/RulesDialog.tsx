@@ -28,17 +28,17 @@ export function RulesDialog({ open, onClose }: { open: boolean; onClose: () => v
       <dialog ref={ref} onClose={onClose} onClick={(e) => { if (e.target === ref.current) onClose(); }} className={`numeral-dialog ${open ? "open" : ""}`}>
         <div className="bg-[var(--island)] rounded-2xl border border-white/8 p-6 flex flex-col gap-5">
           <div className="flex justify-between items-center">
-            <h2 className="text-base font-bold tracking-widest uppercase">{t("howToPlay", "common")}</h2>
+            <h2 className="text-base font-bold tracking-widest uppercase">{t("common.howToPlay")}</h2>
             <button onClick={onClose} className="text-[var(--foreground)]/40 hover:text-[var(--foreground)] transition-colors text-lg leading-none">✕</button>
           </div>
           <p className="text-sm text-[var(--foreground)]/60 leading-relaxed">
-            {t("guessSecret", "game")}
+            {t("game.guessSecret")}
           </p>
           <div className="grid grid-cols-2 gap-3">
             {rules.map(({ cls, tKey, num }) => (
               <div key={tKey} className="flex items-center gap-3">
-                <div className={`${cls} size-11 rounded-md flex-shrink-0 flex items-center justify-center text-white font-bold text-lg`}>{num}</div>
-                <span className="text-sm text-[var(--foreground)]/75">{t(tKey, "game")}</span>
+                <div className={`${cls} size-11 rounded-md shrink-0 flex items-center justify-center text-white font-bold text-lg`}>{num}</div>
+                <span className="text-sm text-[var(--foreground)]/75">{t(`game.${tKey}`)}</span>
               </div>
             ))}
           </div>
