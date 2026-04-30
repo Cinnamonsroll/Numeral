@@ -1,4 +1,4 @@
-[# Numeral](https://numeral.pancake.wtf)
+# Numeral
 
 A daily number guessing game built with Next.js. Guess the secret 5-digit code in 6 tries.
 
