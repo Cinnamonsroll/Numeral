@@ -81,7 +81,7 @@ export function SettingsDialog({
               onClick={() => setLang("en")}
               className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors flex items-center gap-2 ${lang === "en" ? "bg-[var(--theme)] text-white" : "bg-[var(--background)] text-[var(--foreground)]/60 border border-white/10"}`}
             >
-              <Image src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f1ec-1f1e7.svg" alt="GB" width={18} height={18} className="inline-block" />
+              <Image src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f1fa-1f1f8.svg" alt="EN" width={18} height={18} className="inline-block" />
               English
             </button>
             <button
