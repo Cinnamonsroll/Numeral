@@ -69,7 +69,7 @@ export function saveGame(state: GameState) {
 }
 
 const EMOJI_MAP: Record<string, string> = {
-  correct: "🟩", close: "🟨", near: "🟫", far: "🟥", joker: "🟪",
+  correct: "🟩", close: "🟨", near: "🟧", far: "🟥", joker: "🟪",
 };
 
 export function generateShareText(
