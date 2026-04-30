@@ -1,0 +1,47 @@
+{
+  "common": {
+    "numeral": "Numéral",
+    "statistics": "Statistiques",
+    "settings": "Paramètres",
+    "howToPlay": "Comment jouer",
+    "gameplay": "Jeu",
+    "hardMode": "Mode difficile",
+    "hardModeDesc": "Les chiffres corrects doivent rester en place",
+    "language": "Langue"
+  },
+  "game": {
+    "guessSecret": "Devinez le code secret à 5 chiffres en 6 essais. Après chaque essai, les couleurs vous indiquent à quel point chaque chiffre est proche de la cible — mais pas la distance exacte ni la direction.",
+    "notEnoughDigits": "Pas assez de chiffres",
+    "theNumberWas": "Le numéro était",
+    "nextGameIn": "Prochaine partie dans",
+    "shareResults": "Partager les résultats",
+    "copied": "Résultats copiés dans le presse-papiers!",
+    "copyFailed": "Échec de la copie",
+    "exactMatch": "Correspondance exacte",
+    "offBy1or2": "À 1 ou 2 près",
+    "offBy3or4": "À 3 ou 4 près",
+    "offBy5plus": "À 5 ou plus",
+    "jokerHidden": "Caché"
+  },
+  "winMessages": {
+    "1": "Génie!",
+    "2": "Magnifique!",
+    "3": "Impressionnant!",
+    "4": "Splendide!",
+    "5": "Super!",
+    "6": "Ouf!"
+  },
+  "stats": {
+    "played": "Joués",
+    "winPct": "Victoires %",
+    "streak": "Série",
+    "best": "Meilleur",
+    "guessDistribution": "Distribution des essais"
+  },
+  "footer": {
+    "madeWith": "Fabriqué avec",
+    "and": "et",
+    "byPancake": "par Pancake",
+    "hardModeLabel": "Difficile"
+  }
+}
