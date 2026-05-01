@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   icons: {
     icon: [{ url: "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f95e.svg", type: "image/svg+xml" }],
   },
-  themeColor: "#6B9E7A",
 };
 
 export const viewport: Viewport = {

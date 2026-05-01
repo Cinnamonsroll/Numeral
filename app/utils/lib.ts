@@ -76,13 +76,12 @@ export function generateShareText(
   guesses: string[],
   evaluations: TileState[][],
   guessCount: number,
-  hardMode: boolean,
 ): string {
   const lines = guesses.map((g, i) =>
     g.split("").map((_, j) => EMOJI_MAP[evaluations[i][j]] ?? "⬛").join("")
   );
   return [
-    `Numeral ${new Date().toLocaleDateString()} ${guessCount}/6${hardMode ? "*" : ""}`,
+    `Numeral ${new Date().toLocaleDateString()} ${guessCount}/6`,
     ...lines,
     "",
     "https://numeral.pancake.wtf",
@@ -93,8 +92,7 @@ export async function copyResultsToClipboard(
   guesses: string[],
   evaluations: TileState[][],
   guessCount: number,
-  hardMode: boolean,
 ): Promise<void> {
-  const text = generateShareText(guesses, evaluations, guessCount, hardMode);
+  const text = generateShareText(guesses, evaluations, guessCount);
   await navigator.clipboard.writeText(text);
 }

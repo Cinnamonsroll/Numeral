@@ -4,9 +4,6 @@
     "statistics": "Statistics",
     "settings": "Settings",
     "howToPlay": "How to Play",
-    "gameplay": "Gameplay",
-    "hardMode": "Hard Mode",
-    "hardModeDesc": "Correct digits must stay in position",
     "language": "Language"
   },
   "game": {
@@ -42,7 +39,6 @@
   "footer": {
     "madeWith": "Made with",
     "and": "and",
-    "byPancake": "by Pancake",
-    "hardModeLabel": "Hard"
+    "byPancake": "by Pancake"
   }
 }

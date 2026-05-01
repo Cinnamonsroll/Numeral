@@ -8,14 +8,10 @@ import Image from "next/image";
 export function SettingsDialog({
   open,
   onClose,
-  hardMode,
-  setHardMode,
   stats,
 }: {
   open: boolean;
   onClose: () => void;
-  hardMode: boolean;
-  setHardMode: (v: boolean) => void;
   stats?: Stats;
 }) {
   const { lang, setLang, t } = useLang();
@@ -50,27 +46,6 @@ export function SettingsDialog({
             >
               ✕
             </button>
-          </div>
-          <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-[var(--foreground)]/40 mb-4">
-              {t("common.gameplay")}
-            </p>
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <p className="text-sm font-semibold">{t("common.hardMode")}</p>
-                <p className="text-xs text-[var(--foreground)]/40 mt-0.5">
-                  {t("common.hardModeDesc")}
-                </p>
-              </div>
-              <button
-                onClick={() => setHardMode(!hardMode)}
-                className={`relative w-11 h-6 rounded-full transition-colors duration-300 shrink-0 ${hardMode ? "bg-[var(--theme)]" : "bg-[var(--foreground)]/15"}`}
-              >
-                <span
-                  className={`absolute top-1 w-4 h-4 bg-white rounded-full shadow-md transition-all duration-300 ${hardMode ? "left-6" : "left-1"}`}
-                />
-              </button>
-            </div>
           </div>
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase text-[var(--foreground)]/40 mb-4">

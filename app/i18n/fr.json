@@ -4,9 +4,6 @@
     "statistics": "Statistiques",
     "settings": "Paramètres",
     "howToPlay": "Comment jouer",
-    "gameplay": "Jeu",
-    "hardMode": "Mode difficile",
-    "hardModeDesc": "Les chiffres corrects doivent rester en place",
     "language": "Langue"
   },
   "game": {
@@ -42,7 +39,6 @@
   "footer": {
     "madeWith": "Fabriqué avec",
     "and": "et",
-    "byPancake": "par Pancake",
-    "hardModeLabel": "Difficile"
+    "byPancake": "par Pancake"
   }
 }

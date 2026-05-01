@@ -17,14 +17,13 @@ const WIN_MESSAGES: Record<number, string> = {
 };
 
 export function WinModal({
-  open, onClose, guesses, evaluations, target, hardMode, guessCount,
+  open, onClose, guesses, evaluations, target, guessCount,
 }: {
   open: boolean;
   onClose: () => void;
   guesses: string[];
   evaluations: TileState[][];
   target: string;
-  hardMode: boolean;
   guessCount: number;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
@@ -60,10 +59,10 @@ export function WinModal({
   }, [now, nextGame]);
 
   const handleCopy = useCallback(() => {
-    copyResultsToClipboard(guesses, evaluations, guessCount, hardMode)
+    copyResultsToClipboard(guesses, evaluations, guessCount)
       .then(() => toast.success("Results copied to clipboard!"))
       .catch(() => toast.error("Failed to copy results"));
-  }, [guesses, evaluations, guessCount, hardMode]);
+  }, [guesses, evaluations, guessCount]);
 
   const { t } = useLang();
   const winMessage = WIN_MESSAGES[guessCount] ?? t("game.nice");

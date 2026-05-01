@@ -32,7 +32,6 @@ interface GameState {
   evaluations: TileState[][];
   current: string;
   shake: boolean;
-  hardMode: boolean;
   stats: Stats;
   rulesOpen: boolean;
   statsOpen: boolean;
@@ -51,7 +50,6 @@ interface GameState {
   setStatsOpen: (v: boolean) => void;
   setSettingsOpen: (v: boolean) => void;
   setWinOpen: (v: boolean) => void;
-  setHardMode: (v: boolean) => void;
   handleKey: (key: string) => void;
 }
 
@@ -69,7 +67,6 @@ export function GameProvider({ children }: { children: ReactNode }) {
   const [evaluations, setEvaluations] = useState<TileState[][]>([]);
   const [current, setCurrent] = useState("");
   const [shake, setShake] = useState(false);
-  const [hardMode, setHardMode] = useState(false);
   const [stats, setStats] = useState<Stats>(DEFAULT_STATS);
   const [rulesOpen, setRulesOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
@@ -148,27 +145,6 @@ export function GameProvider({ children }: { children: ReactNode }) {
           return;
         }
 
-        if (hardMode) {
-          let hardErr = "";
-          outer: for (let gi = 0; gi < evaluations.length; gi++) {
-            for (let pos = 0; pos < WORD_LENGTH; pos++) {
-              if (
-                evaluations[gi][pos] === "correct" &&
-                current[pos] !== guesses[gi][pos]
-              ) {
-                hardErr = `Position ${pos + 1} must be ${guesses[gi][pos]}`;
-                break outer;
-              }
-            }
-          }
-          if (hardErr) {
-            showError(hardErr);
-            setShake(true);
-            setTimeout(() => setShake(false), 500);
-            return;
-          }
-        }
-
         const rowIndex = guesses.length;
         const ev = evaluateGuess(current, target);
         const didWin = ev.every((s) => s === "correct");
@@ -202,7 +178,6 @@ export function GameProvider({ children }: { children: ReactNode }) {
     [
       gameOver,
       current,
-      hardMode,
       evaluations,
       guesses,
       target,
@@ -264,7 +239,6 @@ export function GameProvider({ children }: { children: ReactNode }) {
         evaluations,
         current,
         shake,
-        hardMode,
         stats,
         rulesOpen,
         statsOpen,
@@ -283,7 +257,6 @@ export function GameProvider({ children }: { children: ReactNode }) {
         setStatsOpen,
         setSettingsOpen,
         setWinOpen,
-        setHardMode,
         handleKey,
       }}
     >

@@ -34,17 +34,17 @@ export function StatsDialog({
     }
   }, [open]);
 
-  const { guesses, evaluations, target, hardMode, won } = useGame();
+  const { guesses, evaluations, target, won } = useGame();
 
   const maxDist = Math.max(...stats.dist, 1);
   const winPct = stats.played ? Math.round((stats.wins / stats.played) * 100) : 0;
 
   const handleCopy = useCallback(() => {
     if (!won || guesses.length === 0) return;
-    copyResultsToClipboard(guesses, evaluations, guesses.length, hardMode)
+    copyResultsToClipboard(guesses, evaluations, guesses.length)
       .then(() => toast.success("Results copied to clipboard!"))
       .catch(() => toast.error("Failed to copy results"));
-  }, [guesses, evaluations, hardMode, won]);
+  }, [guesses, evaluations, won]);
 
   const winMessage = useMemo(() => {
     if (!won) return null;

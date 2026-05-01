@@ -14,7 +14,6 @@ function GameBoard() {
   const {
     errorMsg,
     shake,
-    hardMode,
     rulesOpen,
     statsOpen,
     settingsOpen,
@@ -28,7 +27,6 @@ function GameBoard() {
     setWinOpen,
     gameOver,
     won,
-    lost,
     target,
     rows,
     winRow,
@@ -55,8 +53,6 @@ function GameBoard() {
       <SettingsDialog
         open={settingsOpen}
         onClose={() => setSettingsOpen(false)}
-        hardMode={hardMode}
-        setHardMode={() => {}}
         stats={stats}
       />
       <WinModal
@@ -65,7 +61,6 @@ function GameBoard() {
         guesses={guesses}
         evaluations={evaluations}
         target={target}
-        hardMode={hardMode}
         guessCount={guesses.length}
       />
 
@@ -249,11 +244,6 @@ function GameBoard() {
                 className="absolute top-2 bg-[var(--foreground)] text-[var(--background)] text-xs font-bold px-4 py-2 rounded-full error-toast pointer-events-none z-10"
               >
                 {errorMsg}
-              </div>
-            )}
-            {hardMode && (
-              <div className="absolute top-2 text-xs text-[var(--theme)]/70 font-semibold tracking-widest uppercase">
-                Hard Mode
               </div>
             )}
             <div className={`flex flex-col gap-1.5 ${shake ? "shake" : ""}`}>
